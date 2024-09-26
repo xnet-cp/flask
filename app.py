@@ -30,7 +30,7 @@ def index(subpath):
         else:
             return make_response("302 without Location header", 500)
 
-    # app.logger.info("%s - \"%s %s %s\" %s", request.remote_addr, request.method, request.query_string, request.scheme, resp.status_code)
+    app.logger.info("%s - \"%s %s %s\" %s", request.remote_addr, request.method, request.query_string, request.scheme, resp.status_code)
     
     headers = {
         "Content-Type": resp.headers.get("Content-Type", "text/html"),
